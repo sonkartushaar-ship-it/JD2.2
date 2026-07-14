@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Sprite from './Sprite';
 
 // ── Claymation room set dressing ──────────────────────────────────────────────
-import roomBg    from '@assets/Frame_1_1784006358820.png';
+import roomBg    from '@assets/Gemini_Generated_Image_ngw9g6ngw9g6ngw9_1_1784006527123.png';
 import sofa1     from '@assets/Adobe_Express_-_file_1784000834989.png';
 import tableImg  from '@assets/generated_images/table_clay.png';
 import vaseIntact  from '@assets/generated_images/vase_1_intact.png';
@@ -16,7 +16,7 @@ export type DogState = 'idle' | 'run' | 'jump' | 'sit' | 'bark';
 
 // ── World / viewport dimensions ───────────────────────────────────────────────
 const VIEWPORT_W = 1280;
-const WORLD_W    = VIEWPORT_W * 10; // 12 800 px wide
+const WORLD_W    = VIEWPORT_W * 11; // 14 080 px wide
 
 // ── Physics constants ─────────────────────────────────────────────────────────
 const FLOOR_H    = 90;   // px from viewport bottom → floor surface
