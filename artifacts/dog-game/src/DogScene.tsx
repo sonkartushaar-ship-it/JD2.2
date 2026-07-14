@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Sprite from './Sprite';
 
 // ── Claymation room set dressing ──────────────────────────────────────────────
-import roomBg    from '@assets/bg_clean.png';
+import roomBg    from '@assets/Frame_1_1784006358820.png';
 import sofa1     from '@assets/Adobe_Express_-_file_1784000834989.png';
 import tableImg  from '@assets/generated_images/table_clay.png';
 import vaseIntact  from '@assets/generated_images/vase_1_intact.png';
