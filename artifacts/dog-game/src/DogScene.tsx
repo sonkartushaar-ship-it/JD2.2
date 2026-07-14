@@ -431,17 +431,17 @@ export default function DogScene() {
           style={{
             position: 'absolute',
             left: CABINET_X, height: CABINET_H, width: 'auto',
-            bottom: FLOOR_H,
+            bottom: FLOOR_H - 80,
             pointerEvents: 'none', userSelect: 'none',
           }}
         />
 
-        {/* ── Mounted TV — rests on top of cabinet ────────────────────────── */}
+        {/* ── Mounted TV — rests exactly on top of cabinet ─────────────────── */}
         <img src={tvScreenImg} alt="" draggable={false}
           style={{
             position: 'absolute',
             left: CAB_TV_LEFT, height: CAB_TV_H, width: CAB_TV_W,
-            bottom: FLOOR_H + CABINET_H,
+            bottom: FLOOR_H - 80 + CABINET_H,
             pointerEvents: 'none', userSelect: 'none',
           }}
         />
