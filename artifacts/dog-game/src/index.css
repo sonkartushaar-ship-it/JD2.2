@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap');
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --font-sans: 'Quicksand', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f1ea;
+  color: #4a3b2c;
+  overflow: hidden;
+  font-family: var(--font-sans);
+}
+
+@layer utilities {
+  .jump-arc-anim {
+    animation: jump-arc var(--duration) cubic-bezier(0.3, 0.2, 0.7, 0.8) forwards;
+  }
+}
+
+/* Cloud floating animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float 8s ease-in-out infinite 3s;
+}

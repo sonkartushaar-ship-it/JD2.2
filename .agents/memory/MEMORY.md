@@ -1,0 +1,1 @@
+- [Imported zip project layout](imported-dog-game-project.md) — pnpm workspace with dog-game web app, Express api-server under `/api`, empty db schema
