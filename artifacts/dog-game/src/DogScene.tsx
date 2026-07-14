@@ -10,7 +10,7 @@ import vaseFalling from '@assets/generated_images/vase_2_falling.png';
 import vaseBroken  from '@assets/generated_images/vase_3_broken.png';
 
 // ── TV Cabinet set dressing ────────────────────────────────────────────────────
-import cabinetImg   from '@assets/generated_images/tv_cabinet_oak.png';
+import cabinetImg   from '@assets/generated_images/tv_cabinet_oak_2.png';
 import tvScreenImg  from '@assets/generated_images/tv_screen_clay.png';
 import bookLedgeImg from '@assets/generated_images/book_ledge_clay.png';
 import soundbarImg  from '@assets/generated_images/soundbar_clay.png';
@@ -59,13 +59,9 @@ const CAB_SB_H     = 55;
 const CAB_SB_W     = 420;
 const CAB_SB_LEFT  = CABINET_X + Math.round((CABINET_W - CAB_SB_W) / 2);  // 530
 
-// Open drawer — lower-left region, pop-out platform
-const CAB_DRAWER_H    = 130;
-const CAB_DRAWER_LEFT = CABINET_X + 10;
-
 // Book ledge A — protrudes left from left shelf
-const CAB_BOOK_H      = 110;
-const CAB_BOOK_A_LEFT = CABINET_X - 120;
+const CAB_BOOK_H      = 220;
+const CAB_BOOK_A_LEFT = CABINET_X - 200;
 const CAB_BOOK_B_LEFT = CABINET_X + CABINET_W;  // protrudes right from right shelf
 
 // Decorative boxes — visual only, sits atop cabinet right side
@@ -73,7 +69,6 @@ const CAB_DECO_H    = 120;
 const CAB_DECO_LEFT = CABINET_X + CABINET_W - 140;
 
 // surfaceY values (px above floor surface) for each cabinet platform
-const CAB_DRAWER_SURF_Y  = 140;
 const CAB_BOOK_A_SURF_Y  = 245;
 const CAB_BOOK_B_SURF_Y  = 315;
 const CAB_TOP_SURF_Y     = CABINET_H;           // 480 — top of cabinet body
@@ -86,8 +81,7 @@ const PLATFORMS = [
   { id: 'sofa-back',       x1: 179,                 x2: 755,                   surfaceY: 466             }, // backrest
   { id: 'table',           x1: TABLE_X1_PX,         x2: TABLE_X2_PX,           surfaceY: TABLE_H - 2     },
   // TV Cabinet platforms
-  { id: 'cab-drawer',      x1: CABINET_X + 10,      x2: CABINET_X + 255,       surfaceY: CAB_DRAWER_SURF_Y },
-  { id: 'cab-book-a',      x1: CABINET_X - 120,     x2: CABINET_X + 110,       surfaceY: CAB_BOOK_A_SURF_Y },
+  { id: 'cab-book-a',      x1: CABINET_X - 200,     x2: CABINET_X + 80,        surfaceY: CAB_BOOK_A_SURF_Y },
   { id: 'cab-book-b',      x1: CABINET_X + 370,     x2: CABINET_X + 610,       surfaceY: CAB_BOOK_B_SURF_Y },
   { id: 'cab-top',         x1: CABINET_X,           x2: CABINET_X + CABINET_W, surfaceY: CAB_TOP_SURF_Y    },
   { id: 'cab-soundbar',    x1: CAB_SB_LEFT,         x2: CAB_SB_LEFT + CAB_SB_W, surfaceY: CAB_SB_SURF_Y   },
@@ -442,12 +436,12 @@ export default function DogScene() {
           }}
         />
 
-        {/* ── Mounted TV ──────────────────────────────────────────────────── */}
+        {/* ── Mounted TV — rests on top of cabinet ────────────────────────── */}
         <img src={tvScreenImg} alt="" draggable={false}
           style={{
             position: 'absolute',
             left: CAB_TV_LEFT, height: CAB_TV_H, width: CAB_TV_W,
-            bottom: FLOOR_H + CABINET_H - 30,   // overlaps cabinet top slightly
+            bottom: FLOOR_H + CABINET_H,
             pointerEvents: 'none', userSelect: 'none',
           }}
         />
@@ -479,16 +473,6 @@ export default function DogScene() {
             left: CAB_BOOK_B_LEFT, height: CAB_BOOK_H, width: 'auto',
             bottom: FLOOR_H + CAB_BOOK_B_SURF_Y - CAB_BOOK_H,
             transform: 'scaleX(-1)',
-            pointerEvents: 'none', userSelect: 'none',
-          }}
-        />
-
-        {/* ── Open drawer (mid-level platform) ────────────────────────────── */}
-        <img src={drawerImg} alt="" draggable={false}
-          style={{
-            position: 'absolute',
-            left: CAB_DRAWER_LEFT, height: CAB_DRAWER_H, width: 'auto',
-            bottom: FLOOR_H + CAB_DRAWER_SURF_Y - CAB_DRAWER_H,
             pointerEvents: 'none', userSelect: 'none',
           }}
         />
