@@ -461,7 +461,7 @@ export default function DogScene() {
           style={{
             position: 'absolute',
             left: CAB_BOOK_A_LEFT, height: CAB_BOOK_H, width: 'auto',
-            bottom: FLOOR_H + CAB_BOOK_A_SURF_Y - CAB_BOOK_H,
+            bottom: FLOOR_H + CAB_BOOK_A_SURF_Y - CAB_BOOK_H - 120,
             pointerEvents: 'none', userSelect: 'none',
           }}
         />
@@ -471,7 +471,7 @@ export default function DogScene() {
           style={{
             position: 'absolute',
             left: CAB_BOOK_B_LEFT, height: CAB_BOOK_H, width: 'auto',
-            bottom: FLOOR_H + CAB_BOOK_B_SURF_Y - CAB_BOOK_H,
+            bottom: FLOOR_H + CAB_BOOK_B_SURF_Y - CAB_BOOK_H - 120,
             transform: 'scaleX(-1)',
             pointerEvents: 'none', userSelect: 'none',
           }}
